@@ -1,0 +1,330 @@
+/* frontend/src/index.css */
+
+/* Basic Reset and Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Updated background gradient for more depth and richer dark tones */
+    background: linear-gradient(to bottom, #0d121c, #1a202c, #000000); /* Darker blues/blacks */
+    color: #f1f5f9; /* Default light gray for general text (slate-100) */
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base colors for easy reference - Defined a richer palette */
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Slate Tones - Adjusted for better contrast on dark backgrounds */
+    --color-slate-100: #f1f5f9; /* Lightest for main text */
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1; /* For slightly muted text */
+    --color-slate-400: #94a3b8; /* For secondary/smaller text where less pop is needed */
+    --color-slate-500: #64748b;
+    --color-slate-700: #334155; /* For borders/dividers */
+
+    /* Background Opacities */
+    --color-slate-800-40: rgba(30, 41, 59, 0.4);
+    --color-slate-800-30: rgba(30, 41, 59, 0.3);
+    --color-slate-900-30: rgba(15, 23, 42, 0.3);
+    --color-slate-900-50: rgba(15, 23, 42, 0.5);
+
+    /* Indigo & Pink Tones - Kept for general gradients and button accents */
+    --color-indigo-400: #818cf8;
+    --color-indigo-500: #6366f1;
+    --color-indigo-600-20: rgba(79, 70, 229, 0.2);
+    --color-indigo-700: #4338ca;
+    --color-indigo-800-40: rgba(67, 56, 202, 0.4);
+    --color-pink-400: #f472b6;
+    --color-pink-500: #ec4899;
+    --color-pink-600: #db2777;
+    --color-pink-600-12: rgba(217, 70, 239, 0.12);
+    --color-pink-800-20: rgba(157, 23, 77, 0.2);
+
+    /* Gold Theme Colors - NEW */
+    --color-gold-start: #FFD700; /* Gold */
+    --color-gold-end: #FFA500;   /* Orange */
+    --color-gold-accent: #FFECB3; /* Lighter gold for text contrast */
+
+    /* Yellow/Orange for "NEW · COMING SOON" Banner */
+    --color-yellow-300: #fcd34d;
+    --color-yellow-400: #facc15;
+    --color-yellow-400-90: rgba(250, 204, 21, 0.9);
+    --color-orange-400: #fb923c;
+    --color-orange-400-80: rgba(251, 146, 60, 0.8);
+
+    /* Status Colors */
+    --color-red-500: #ef4444;
+    --color-green-400: #4ade80;
+    --color-red-400: #ef4444;
+    --color-red-800-20: rgba(153, 27, 27, 0.2);
+    --color-red-500-50: rgba(239, 68, 68, 0.5);
+
+    /* UI Mockup Card Specific */
+    --color-dark-blue-60: rgba(15, 23, 42, 0.6);
+    --color-dark-blue-40: rgba(2, 17, 38, 0.4);
+}
+
+
+/* General Layout Classes (unchanged) */
+.max-w-7xl { max-width: 1280px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.-mt-4 { margin-top: -1rem; }
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-col { flex-direction: column; }
+.md\:flex-row {
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+.flex-1 { flex: 1; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.md\:grid-cols-2 {
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+.md\:grid-cols-3 {
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+
+/* Text and Font Styles - Adjusted for better contrast and appearance */
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.md\:text-6xl {
+    @media (min-width: 768px) {
+        font-size: 3.75rem; line-height: 1;
+    }
+}
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.leading-tight { line-height: 1.25; }
+
+/* Specific Color Adjustments for Visibility and Vibrancy */
+.text-slate-100 { color: var(--color-slate-100); }
+.text-slate-200 { color: var(--color-slate-200); }
+.text-slate-300 { color: var(--color-slate-300); } /* Used more for secondary text now */
+.text-slate-400 { color: var(--color-slate-400); } /* Used for lighter muted text */
+.text-slate-500 { color: var(--color-slate-500); }
+.text-black { color: var(--color-black); }
+.text-white { color: var(--color-white); } /* Pure white for contrast */
+.text-yellow-300 { color: var(--color-yellow-300); }
+.text-indigo-400 { color: var(--color-indigo-400); } /* Still good for bullet points */
+.text-red-400 { color: var(--color-red-400); }
+.text-green-400 { color: var(--color-green-400); }
+
+/* Gradient Text for Heading Highlights - NOW GOLD */
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes the text itself transparent so background gradient shows through */
+}
+/* Applied to the main hero heading's highlight span */
+.hero-heading-gradient {
+    background-image: linear-gradient(to right, var(--color-gold-start), var(--color-gold-end));
+}
+
+/* Backgrounds - Adjusted for better contrast/vibrancy */
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to)); }
+/* Updated primary button gradient for better pop */
+.from-indigo-500 { --tw-gradient-from: var(--color-indigo-500); }
+.to-pink-500 { --tw-gradient-to: var(--color-pink-500); }
+
+.bg-white { background-color: var(--color-white); }
+.bg-slate-800\/40 { background-color: var(--color-slate-800-40); }
+.bg-slate-800\/30 { background-color: var(--color-slate-800-30); }
+.bg-slate-900\/30 { background-color: var(--color-slate-900-30); }
+
+.bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-from), var(--tw-gradient-to)); }
+.from-slate-900\/50 { --tw-gradient-from: var(--color-slate-900-50); }
+.to-slate-800\/40 { --tw-gradient-to: var(--color-slate-800-40); }
+
+/* Banner Colors - Adjusted for clarity */
+.from-indigo-800\/40 { --tw-gradient-from: var(--color-indigo-800-40); }
+.to-pink-800\/20 { --tw-gradient-to: var(--color-pink-800-20); }
+.bg-yellow-400 { background-color: var(--color-yellow-400); }
+.to-orange-400 { --tw-gradient-to: var(--color-orange-400); }
+
+/* UI Mockup Card Colors - Clarified gradient definitions */
+.from-\[\#0f172a\]\/60 { /* Specific start color for this background */
+    background-image: linear-gradient(to top right, var(--color-dark-blue-60), var(--color-dark-blue-40));
+}
+/* Replaced to-\[\#021126\]\/40 as it was problematic in standard CSS, consolidated into from above */
+
+.bg-gradient-to-b.from-slate-800\/40 { --tw-gradient-from: var(--color-slate-800-40); --tw-gradient-to: transparent; }
+
+/* Floating Card Colors */
+.bg-gradient-to-br.from-indigo-600\/20 { --tw-gradient-from: var(--color-indigo-600-20); }
+.to-pink-600\/12 { --tw-gradient-to: var(--color-pink-600-12); }
+
+/* Plug to Launch Card Colors - Now Gold/Orange Themed for more pop */
+.bg-gradient-to-br.from-yellow-400\/90 { --tw-gradient-from: var(--color-gold-start); } /* Using new gold start */
+.to-orange-400\/80 { --tw-gradient-to: var(--color-gold-end); } /* Using new gold end */
+
+
+/* Pricing Featured Card - Consistent rich gradient */
+.bg-gradient-to-br.from-indigo-700 { --tw-gradient-from: var(--color-indigo-700); }
+.to-pink-600 { --tw-gradient-to: var(--color-pink-600); }
+
+/* Form Background */
+.bg-slate-900\/30 { background-color: var(--color-slate-900-30); }
+
+
+/* Borders and Shadows (unchanged for now, fine-tuned if needed after primary colors) */
+.rounded-md { border-radius: 0.375rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-3xl { border-radius: 1.5rem; }
+.rounded-full { border-radius: 9999px; }
+.border { border-width: 1px; border-style: solid; }
+.border-white\/5 { border-color: rgba(255, 255, 255, 0.05); }
+.border-white\/3 { border-color: rgba(255, 255, 255, 0.03); }
+.border-white\/6 { border-color: rgba(255, 255, 255, 0.06); }
+.border-slate-700 { border-color: var(--color-slate-700); }
+.border-red-500\/50 { border-color: var(--color-red-500-50); }
+
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+
+/* Widths and Heights (unchanged) */
+.w-3 { width: 0.75rem; }
+.h-3 { height: 0.75rem; }
+.w-10 { width: 2.5rem; }
+.h-10 { height: 2.5rem; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.w-16 { width: 4rem; }
+.h-16 { height: 4rem; }
+.w-32 { width: 8rem; }
+.w-44 { width: 11rem; }
+.h-44 { height: 11rem; }
+.w-full { width: 100%; }
+.max-w-xl { max-width: 36rem; }
+.max-w-md { max-width: 28rem; }
+.max-w-2xl { max-width: 42rem; }
+.md\:w-96 {
+    @media (min-width: 768px) {
+        width: 24rem;
+    }
+}
+
+/* Positioning (unchanged) */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.left-6 { left: 1.5rem; }
+.right-6 { right: 1.5rem; }
+.-bottom-6 { bottom: -1.5rem; }
+
+/* Other Utilities (unchanged) */
+.backdrop-blur-sm { backdrop-filter: blur(4px); }
+.underline { text-decoration: underline; }
+.block { display: block; }
+.text-center { text-align: center; }
+
+/* Hidden utility for responsive design (unchanged) */
+.hidden { display: none; }
+.md\:flex {
+    @media (min-width: 768px) {
+        display: flex;
+    }
+}
+
+/* Custom Animations (unchanged, as they are controlled by JS and CSS keyframes) */
+/* Hero Left initial animation */
+.hero-left-initial {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+.hero-left-animate {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Hero Right initial animation */
+.hero-right-initial {
+    opacity: 0;
+    transform: scale(0.95);
+}
+.hero-right-animate {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+/* Chart initial animation */
+.chart-initial {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.chart-animate {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.4s ease-out 0.4s, transform 0.4s ease-out 0.4s;
+}
+
+/* Floating Card animation */
+.floating-card-animate {
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Pendrive Mockup animation */
+.pendrive-mockup-initial {
+    transform: rotate(-8deg) scale(0.98);
+}
+.pendrive-mockup-animate {
+    transform: rotate(0deg) scale(1);
+    transition: transform 0.6s ease-out;
+}
+
+/* Plug to Launch card animation */
+.plug-launch-animate {
+    animation: plugFloatAnimation 2.8s ease-in-out infinite;
+}
+@keyframes plugFloatAnimation {
+    0% { transform: translateY(-6px); }
+    50% { transform: translateY(6px); }
+    100% { transform: translateY(-6px); }
+}
+
+/* Contact Form Feedback Colors */
+.text-green-400 { color: var(--color-green-400); }
+.text-red-400 { color: var(--color-red-400); }
+.bg-red-800\/20 { background-color: var(--color-red-800-20); }
+.border-red-500\/50 { border-color: var(--color-red-500-50); }
