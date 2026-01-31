@@ -406,7 +406,7 @@
             <div className="mt-8 grid md:grid-cols-3 gap-6">
               <PriceCard title="Starter" price="Free" benefits={["1 project", "Basic support", "Community docs"]} />
               
-              <PriceCard title="Pro" price="Rs.9999/mo" benefits={["Unlimited projects", "Priority support", "Advanced analytics"]} featured />
+              <PriceCard title="Pro" price="Rs.19999/mo" benefits={["Unlimited projects", "Priority support", "Advanced analytics"]} featured />
               
               <PriceCard title="Enterprise" price="Contact" benefits={["SLA & onboarding", "Custom integrations", "Dedicated engineer"]} />
             </div>
