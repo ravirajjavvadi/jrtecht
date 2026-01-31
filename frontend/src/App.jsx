@@ -404,9 +404,9 @@
           <section id="pricing" className="max-w-7xl mx-auto px-6 py-16">
             <h2 className="text-3xl font-semibold">Pricing</h2>
             <div className="mt-8 grid md:grid-cols-3 gap-6">
-              <PriceCard title="Starter" price="Free" benefits={["1 project", "Basic support", "Community docs"]} />
+              <PriceCard title="Starter" price="5999/yr" benefits={["1 project", "Basic support", "Community docs"]} />
               
-              <PriceCard title="Pro" price="Rs.19999/mo" benefits={["Unlimited projects", "Priority support", "Advanced analytics"]} featured />
+              <PriceCard title="Pro" price="Rs.9999/yr" benefits={["2 projects", "Priority support", "Advanced analytics", "5Years superior support"]} featured />
               
               <PriceCard title="Enterprise" price="Contact" benefits={["SLA & onboarding", "Custom integrations", "Dedicated engineer"]} />
             </div>
@@ -417,7 +417,7 @@
             <div className="flex flex-col md:flex-row items-start justify-between gap-8">
               <div>
                 <div className="text-xl font-semibold">Ready to build?</div>
-                <div className="mt-2 text-slate-400 max-w-md">Tell us about your project and we'll prepare a tailored plan..Contact :: +91 7036086849.</div>
+                <div className="mt-2 text-slate-400 max-w-md">Tell us about your project and we'll prepare a tailored plan..Contact :: +917036086849.</div>
               </div>
 
               {/* Contact Form with React state and submission logic */}
